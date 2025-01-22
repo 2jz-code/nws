@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground bg-white;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
