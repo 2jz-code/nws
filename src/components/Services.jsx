@@ -5,8 +5,10 @@ import {
   WrenchScrewdriverIcon,
   MagnifyingGlassIcon,
   ComputerDesktopIcon,
-} from "@heroicons/react/24/outline";
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline"; // Added ArrowRightIcon
 import Background from "../assets/services-bg.jpg";
+import { useInView } from "react-intersection-observer";
 
 const servicesData = [
   {
@@ -42,6 +44,11 @@ const servicesData = [
 ];
 
 const Services = () => {
+  const { ref: servicesRef, inView: isInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section
       id="services"
@@ -60,16 +67,23 @@ const Services = () => {
       <div className="relative text-center mb-10 z-10">
         <h1 className="text-4xl font-bold text-white">Our Services</h1>
       </div>
-      <div className="container mx-auto px-6 relative z-10 max-w-[1280px]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+      <div
+        className="container mx-auto px-6 relative z-10 max-w-[1280px]"
+        ref={servicesRef}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {servicesData.map((service, index) => (
             <div
               key={index}
-              className="p-6 transition duration-300 ease-in-out hover:bg-slate-400 hover:bg-opacity-80"
+              className={`p-6 transition duration-[2000ms] ease-in-out transform ${
+                isInView
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
             >
               <div className="flex items-center space-x-3 mb-4">
                 {service.icon}
-                <h3 className="text-2xl font-bold text-white hover:text-gray-800">
+                <h3 className="text-2xl font-bold text-white">
                   {service.title}
                 </h3>
               </div>
@@ -78,6 +92,23 @@ const Services = () => {
               </p>
             </div>
           ))}
+
+          {/* Sixth Grid: Button */}
+          <div
+            className={`p-6 flex items-center justify-center transition duration-[2000ms] ease-in-out transform ${
+              isInView
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+          >
+            <a
+              href="#prices"
+              className="flex items-center space-x-2 text-white text-lg font-bold px-6 py-3 rounded-md hover:scale-105 hover:transition hover:duration-700 group"
+            >
+              <span className="leading-none">See Our Prices Now</span>
+              <ArrowRightIcon className="h-6 w-6 text-white transform transition-transform duration-300 group-hover:translate-x-2" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

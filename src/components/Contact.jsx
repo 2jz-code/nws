@@ -1,30 +1,37 @@
 import React from "react";
+import Background from "../assets/contact-bg.jpg";
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-gray-100 py-12">
-      <div className="container mx-auto px-6 max-w-[1240px]">
+    <section
+      id="contact"
+      className="relative py-12"
+    >
+      {/* Overlay Tint */}
+      {/* <div className="absolute inset-0 bg-black bg-opacity-10"></div> */}
+
+      <div className="container mx-auto px-6 max-w-[1240px] relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Side - Contact Info */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-gray-800">Contact Us</h2>
-            <p className="text-xl text-gray-600">
+          <div className="space-y-6 text-black">
+            <h2 className="text-3xl font-bold">Contact Us</h2>
+            <p className="text-xl">
               We'd love to hear from you! Reach out to us through the contact
               form or using the information below.
             </p>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">Email</h3>
-              <p className="text-gray-600 text-xl">contact@example.com</p>
+              <h3 className="text-3xl font-bold">Email</h3>
+              <p className="text-xl">contact@example.com</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-800">Phone</h3>
-              <p className="text-gray-600 text-xl">(123) 456-7890</p>
+              <h3 className="text-3xl font-bold">Phone</h3>
+              <p className="text-xl">(123) 456-7890</p>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
           <form
-            className="bg-white p-6 rounded-lg shadow-lg space-y-4"
+            className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg space-y-4"
             action="mailto:contact@example.com"
             method="POST"
           >
@@ -40,7 +47,7 @@ const Contact = () => {
                 id="name"
                 name="name"
                 required
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-2 border-gray-400 rounded-md shadow-sm bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -55,7 +62,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 required
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-2 border-gray-400 rounded-md shadow-sm bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -69,7 +76,7 @@ const Contact = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-2 border-gray-400 rounded-md shadow-sm bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
@@ -84,7 +91,7 @@ const Contact = () => {
                 name="message"
                 rows="4"
                 required
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-2 border-gray-400 rounded-md shadow-sm bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               ></textarea>
             </div>
             <div>
