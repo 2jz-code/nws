@@ -8,25 +8,24 @@ import Services from "./components/Services";
 import Slideshow from "./components/Slideshow";
 import About from "./components/About";
 
-import "./globals.css"
+import "./globals.css";
 import BackgroundWrapper from "./components/BackgroundWrapper";
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Services/>
-      {/* <Slideshow/> */}
-      <Meet/>
-      <BackgroundWrapper>
-        <Contact/>
-      </BackgroundWrapper>
-      
-      <Footer/>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Navbar />
+			<BackgroundWrapper>
+				<Hero />
+				<About />
+			</BackgroundWrapper>
+			<Services />
+			{/* <Slideshow/> */}
+			<Meet />
+			<Contact />
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
