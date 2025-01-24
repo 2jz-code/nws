@@ -7,7 +7,7 @@ const About = () => {
 			id="about"
 			className="bg-transparent py-12"
 		>
-			<div className="container mx-auto px-6 max-w-[1280px]">
+			<div className="container mx-auto px-6 max-w-[1080px]">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 					{/* Image Section */}
 					<div>

@@ -1,2 +1,4 @@
 @heroicons/react
 react-intersection-observer
+react-router-dom
+react-icons

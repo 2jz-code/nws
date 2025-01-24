@@ -47,7 +47,7 @@ const cardData = [
 
 const Prices = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-6 py-12" id="prices">
+    <div className="flex flex-wrap justify-center gap-6 py-36" id="prices">
       {cardData.map((card, index) => (
         <div
           key={index}
