@@ -11,6 +11,9 @@ import MoreInfo from "./components/getStarted/MoreInfo.jsx"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./globals.css";
 import BackgroundWrapper from "./components/BackgroundWrapper";
+import PriceHero from "./components/pricePage/PriceHero.jsx";
+import PriceIntro from "./components/pricePage/PriceIntro.jsx";
+import WhatToExpect from "./components/pricePage/WhatToExpect.jsx";
 
 function App() {
 	return (
@@ -34,7 +37,14 @@ function App() {
 				  </>
 				}
 			  />
-			  <Route path="/prices" element={<Prices />} />
+			  <Route path="/prices" element={
+				<>
+				<PriceHero/>
+				<PriceIntro/>
+				<Prices />
+				<WhatToExpect/>
+				</>
+				} />
 			  <Route path="/form" element={<MoreInfo/>}/>
 			</Routes>
 		  </main>

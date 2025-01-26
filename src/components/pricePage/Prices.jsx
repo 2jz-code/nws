@@ -1,106 +1,97 @@
 import React from "react";
+import Placeholder from "../../assets/placeholder.jpg";
 
-const cardData = [
+const pricingPlans = [
   {
-    title: "Standard plan",
-    price: 49,
-    period: "/month",
-    features: [
-      { text: "2 team members", available: true },
-      { text: "20GB Cloud storage", available: true },
-      { text: "Integration help", available: true },
-      { text: "Sketch Files", available: false },
-      { text: "API Access", available: false },
-      { text: "Complete documentation", available: false },
-      { text: "24×7 phone & email support", available: false },
-    ],
+    type: "Static Marketing Website",
+    range: "$1,000–$2,500",
+    description:
+      "A sleek and modern static website to showcase your business or portfolio. Ideal for projects that don't require dynamic content or backend integration. Prices range from $1,000 to $2,500, depending on the complexity of the design and features.",
   },
   {
-    title: "Premium plan",
-    price: 99,
-    period: "/month",
-    features: [
-      { text: "5 team members", available: true },
-      { text: "50GB Cloud storage", available: true },
-      { text: "Integration help", available: true },
-      { text: "Sketch Files", available: true },
-      { text: "API Access", available: true },
-      { text: "Complete documentation", available: false },
-      { text: "24×7 phone & email support", available: false },
-    ],
+    type: "Interactive Marketing Website",
+    range: "$2,500–$5,000",
+    description:
+      "An engaging website with interactivity like forms, animations, and basic integrations. Perfect for businesses looking to improve customer engagement. Pricing typically ranges between $2,500 and $5,000, depending on the level of interactivity required.",
   },
   {
-    title: "Enterprise plan",
-    price: 199,
-    period: "/month",
-    features: [
-      { text: "Unlimited team members", available: true },
-      { text: "1TB Cloud storage", available: true },
-      { text: "Integration help", available: true },
-      { text: "Sketch Files", available: true },
-      { text: "API Access", available: true },
-      { text: "Complete documentation", available: true },
-      { text: "24×7 phone & email support", available: true },
-    ],
+    type: "Custom Design & Advanced Features",
+    range: "$5,000–$7,500+",
+    description:
+      "A fully custom website with advanced features and tailored design. Ideal for projects requiring unique functionality or detailed customization. Prices start at $5,000 and go up to $7,500 or more for highly complex features.",
+  },
+  {
+    type: "Frontend + Backend",
+    range: "$10,000–$20,000",
+    description:
+      "Comprehensive development for custom solutions that include both frontend and backend systems. Perfect for projects requiring dynamic functionality, database integrations, or custom APIs. Pricing ranges from $10,000 to $20,000, based on project scope.",
   },
 ];
 
 const Prices = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-6 py-36" id="prices">
-      {cardData.map((card, index) => (
-        <div
-          key={index}
-          className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
-        >
-          <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-            {card.title}
-          </h5>
-          <div className="flex items-baseline text-gray-900 dark:text-white">
-            <span className="text-3xl font-semibold">$</span>
-            <span className="text-5xl font-extrabold tracking-tight">
-              {card.price}
-            </span>
-            <span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">
-              {card.period}
-            </span>
+    <section id="pricing" className="py-12 bg-gray-50">
+      <div className="container mx-auto px-6 max-w-[1080px]">
+        {/* Header Section */}
+        <div className="mb-10 text-center space-y-6">
+          <h1 className="text-4xl font-bold text-gray-800">Pricing Plans</h1>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            We offer pricing plans tailored to your project needs, ensuring
+            high-quality results within your budget.
+          </p>
+        </div>
+
+        {/* Individual Sections */}
+        {pricingPlans.map((plan, index) => (
+          <div
+            key={index}
+            className={`py-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center ${
+              index !== pricingPlans.length - 1
+                ? "border-b border-gray-300"
+                : ""
+            }`}
+          >
+            {/* Image */}
+            <div
+              className={`${
+                index % 2 === 0 ? "order-1" : "order-2"
+              } flex justify-center`}
+            >
+              <img
+                src={Placeholder}
+                alt={`${plan.type} Illustration`}
+                className="w-full max-w-sm rounded-lg shadow-md"
+              />
+            </div>
+
+            {/* Text */}
+            <div
+              className={`${
+                index % 2 === 0 ? "order-2" : "order-1"
+              } text-center md:text-left`}
+            >
+              <h2 className="text-3xl font-bold text-gray-800">{plan.type}</h2>
+              <p className="text-xl font-semibold text-gray-600 mt-2">
+                {plan.range}
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                {plan.description}
+              </p>
+            </div>
           </div>
-          <ul className="space-y-5 my-7">
-            {card.features.map((feature, featureIndex) => (
-              <li
-                key={featureIndex}
-                className={`flex ${
-                  feature.available ? "" : "line-through decoration-gray-500"
-                }`}
-              >
-                <svg
-                  className={`flex-shrink-0 w-4 h-4 ${
-                    feature.available
-                      ? "text-blue-700 dark:text-blue-500"
-                      : "text-gray-400 dark:text-gray-500"
-                  }`}
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
-                  {feature.text}
-                </span>
-              </li>
-            ))}
-          </ul>
+        ))}
+
+        {/* Request a Quote Button */}
+        <div className="mt-12 text-center">
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
+            className="py-3 px-6 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
           >
-            Choose plan
+            Request a Quote
           </button>
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 };
 

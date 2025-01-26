@@ -115,7 +115,7 @@ const Services = () => {
           >
             <a
               href="/prices"
-              className="flex items-center space-x-2 text-white text-lg font-bold px-8 py-4 rounded-md border border-gray-200 hover:scale-105 hover:transition hover:duration-700 group bg-gray-800 bg-opacity-90"
+              className="flex items-center space-x-2 text-white text-lg font-bold px-8 py-4 rounded-md border border-gray-200 hover:scale-105 hover:transition hover:duration-700 group bg-blue-700 bg-opacity-90"
             >
               <span className="leading-none">See Our Prices Now</span>
               <ArrowRightIcon className="h-6 w-6 text-white transform transition-transform duration-300 group-hover:translate-x-2" />

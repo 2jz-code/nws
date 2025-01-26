@@ -108,7 +108,7 @@ const Navbar = () => {
                 onClick={toggleDropdown}
                 className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm transition ease-in-out duration-200 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
-                Company
+                More
                 <svg
                   className="w-2.5 h-2.5 ms-2.5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,11 +126,11 @@ const Navbar = () => {
               </button>
               {dropdownOpen && (
                 <div className="absolute mt-2 z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-400">
+                  <ul className="py-2 text-sm rounded border border-black text-gray-700 dark:text-gray-400">
                     <li>
                       <Link
                         to="/prices"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Pricing
                       </Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to="/form"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Quote
                       </Link>
