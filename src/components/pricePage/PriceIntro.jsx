@@ -2,7 +2,7 @@ import React from "react";
 
 const PriceIntro = () => {
   return (
-    <section className="bg-gray-50 py-12">
+    <section className="bg-gray-100 py-12">
       <div className="container mx-auto px-6 max-w-[1080px] text-center space-y-6">
         <h2 className="text-3xl font-bold text-gray-800">
           Tailored Pricing for Your Unique Needs

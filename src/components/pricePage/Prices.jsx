@@ -83,12 +83,14 @@ const Prices = () => {
 
         {/* Request a Quote Button */}
         <div className="mt-12 text-center">
-          <button
-            type="button"
-            className="py-3 px-6 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
-          >
-            Request a Quote
-          </button>
+          <a href="form">
+            <button
+              type="button"
+              className="py-3 px-6 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+            >
+              Request a Quote
+            </button>
+          </a>
         </div>
       </div>
     </section>
